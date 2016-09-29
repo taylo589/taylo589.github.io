@@ -58,6 +58,7 @@
                 <br>
                 <br>
                 <br>
+                <p>Click an image below to add it to your face</p>
                 <img onclick="imgBorder(this)" id="beautiful" width="32" height="24" src="InProgress_ImageMap_01.png">
                 <img onclick="imgBorder(this)" id="pizza" width="32" height="24" src="InProgress_ImageMap_02.png">
                 <img onclick="imgBorder(this)" id="sunnies" width="32" height="24" src="InProgress_ImageMap_03.png">
@@ -74,7 +75,7 @@
                         var imgS = "";
                         var imgDict = {
                           "beautiful" : [1,1],
-                          "pizza" : [2,1],
+                          "pizza" : [1.5,1.1],
                           "sunnies" : [.6,.3]
                         };
                         var xyf = new Array(2);
@@ -133,7 +134,7 @@
                                         if( imgS != ""){
                                           xyf = imgDict[imgS.id];
                                           document.getElementById("xyfactors").innerHTML = xyf.toString();
-                                          overlayContext.drawImage(imgS,(-(event.width/2))*1.5*xyf[0] >> 0, (-(event.height/2))*1.5*xyf[1] >> 0, event.width*1.5*xyf[0], event.height*1.5*xyf[1]);
+                                          overlayContext.drawImage(imgS,(-(event.width/2))*1.5*xyf[0] >> 0, (-(event.height/2))*1.5*xyf[1]*1.1 >> 0, event.width*1.5*xyf[0], event.height*1.5*xyf[1]);
                                         }
 					overlayContext.rotate((Math.PI/2)-event.angle);
                                         overlayContext.translate(-event.x, -event.y);
