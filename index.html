@@ -76,10 +76,11 @@
 			var debugOverlay = document.getElementById('debug');
                         var overlayContext = canvasOverlay.getContext('2d');
                         var imgS = "";
+                        // [x0,y0,xs,ys]: location and scale factor array dictionary
                         var imgDict = {
-                          "beautiful" : [1,1,1,1],
-                          "pizza" : [1,1,1.5,1.1],
-                          "sunnies" : [1,1,.6,.3]
+                          "beautiful" : [1,1,1,1.5],
+                          "pizza" : [1,1,1.2,1.2],
+                          "sunnies" : [1,0.9,.6,.3]
                         };
                         var xyf = new Array(2);
 			canvasOverlay.style.position = "absolute";
@@ -138,7 +139,7 @@
                                           xyf = imgDict[imgS.id];
                                           document.getElementById("xyloc").innerHTML = xyf.slice(0,1).toString();
                                           document.getElementById("xyscale").innerHTML = xyf.slice(2,3).toString();
-                                          overlayContext.drawImage(imgS,(-(event.width/2))*1.5*xyf[0] >> 0, (-(event.height/2))*1.5*xyf[1]*0.9 >> 0, event.width*1.5*xyf[0], event.height*1.5*xyf[1]);
+                                          overlayContext.drawImage(imgS,(-(event.width/2))*1.5*xyf[0] >> 0, (-(event.height/2))*1.5*xyf[1] >> 0, event.width*1.5*xyf[2], event.height*1.5*xyf[3]);
                                         }
 					overlayContext.rotate((Math.PI/2)-event.angle);
                                         overlayContext.translate(-event.x, -event.y);
