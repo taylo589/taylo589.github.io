@@ -62,7 +62,10 @@
                 <img onclick="imgBorder(this)" id="beautiful" width="32" height="24" src="InProgress_ImageMap_01.png">
                 <img onclick="imgBorder(this)" id="pizza" width="32" height="24" src="InProgress_ImageMap_02.png">
                 <img onclick="imgBorder(this)" id="sunnies" width="32" height="24" src="InProgress_ImageMap_03.png">
-                <p id="xyfactors"</p>
+                <p>location factors</p>
+                <p id="xyloc"</p>
+                <p>scale factors</p>
+                <p id="xyscale"</p>
 		
 		<script>
 		  // set up video and canvas elements needed
@@ -74,9 +77,9 @@
                         var overlayContext = canvasOverlay.getContext('2d');
                         var imgS = "";
                         var imgDict = {
-                          "beautiful" : [1,1],
-                          "pizza" : [1.5,1.1],
-                          "sunnies" : [.6,.3]
+                          "beautiful" : [1,1,1,1],
+                          "pizza" : [1,1,1.5,1.1],
+                          "sunnies" : [1,1,.6,.3]
                         };
                         var xyf = new Array(2);
 			canvasOverlay.style.position = "absolute";
@@ -133,7 +136,8 @@
                                         overlayContext.strokeRect((-(event.width/2)) >> 0, (-(event.height/2)) >> 0, event.width, event.height);
                                         if( imgS != ""){
                                           xyf = imgDict[imgS.id];
-                                          document.getElementById("xyfactors").innerHTML = xyf.toString();
+                                          document.getElementById("xyloc").innerHTML = xyf.slice(0,1).toString();
+                                          document.getElementById("xyscale").innerHTML = xyf.slice(2,3).toString();
                                           overlayContext.drawImage(imgS,(-(event.width/2))*1.5*xyf[0] >> 0, (-(event.height/2))*1.5*xyf[1]*0.9 >> 0, event.width*1.5*xyf[0], event.height*1.5*xyf[1]);
                                         }
 					overlayContext.rotate((Math.PI/2)-event.angle);
