@@ -61,6 +61,7 @@
                 <img onclick="imgBorder(this)" id="beautiful" width="32" height="24" src="InProgress_ImageMap_01.png">
                 <img onclick="imgBorder(this)" id="pizza" width="32" height="24" src="InProgress_ImageMap_02.png">
                 <img onclick="imgBorder(this)" id="sunnies" width="32" height="24" src="InProgress_ImageMap_03.png">
+                <p id="xyfactors"</p>
 		
 		<script>
 		  // set up video and canvas elements needed
@@ -138,7 +139,8 @@
 					overlayContext.strokeStyle = "#00CC00";
                                         overlayContext.strokeRect((-(event.width/2)) >> 0, (-(event.height/2)) >> 0, event.width, event.height);
                                         if( imgS != ""){
-                                          xyfact = imgDict[imgS.id];
+                                          xyf = imgDict[imgS.id];
+                                          document.getElementById("xyfactors").innerHTML = xyf;
                                           overlayContext.drawImage(imgS,(-(event.width/2))*1.5 >> 0, (-(event.height/2))*1.5 >> 0, event.width*1.5, event.height*1.5);
                                         }
 					overlayContext.rotate((Math.PI/2)-event.angle);
