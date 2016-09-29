@@ -72,20 +72,12 @@
 			var debugOverlay = document.getElementById('debug');
                         var overlayContext = canvasOverlay.getContext('2d');
                         var imgS = "";
-                        var imgDict = [];
+                        var imgDict = {
+                          "beautiful" : [1,1],
+                          "pizza" : [1,1],
+                          "sunnies" : [0.2,0.1]
+                        };
                         var xyf = new Array(2);
-                        imgDict.push({
-                          key: "beautiful",
-                          value: [1,1]
-                        });
-                        imgDict.push({
-                          key: "pizza",
-                          value: [1,1]
-                        });
-                        imgDict.push({
-                          key: "sunnies",
-                          value: [0.2,0.1]
-                        });
 			canvasOverlay.style.position = "absolute";
 			canvasOverlay.style.top = '0px';
 			canvasOverlay.style.zIndex = '100001';
@@ -140,7 +132,7 @@
                                         overlayContext.strokeRect((-(event.width/2)) >> 0, (-(event.height/2)) >> 0, event.width, event.height);
                                         if( imgS != ""){
                                           xyf = imgDict[imgS.id];
-                                          document.getElementById("xyfactors").innerHTML = imgS.id;
+                                          document.getElementById("xyfactors").innerHTML = xyf[0].toString();
                                           overlayContext.drawImage(imgS,(-(event.width/2))*1.5 >> 0, (-(event.height/2))*1.5 >> 0, event.width*1.5, event.height*1.5);
                                         }
 					overlayContext.rotate((Math.PI/2)-event.angle);
