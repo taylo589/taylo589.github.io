@@ -136,7 +136,7 @@
                                         if( imgS != ""){
                                           xyf = imgDict[imgS.id];
                                           document.getElementById("xyfactors").innerHTML = xyf.toString();
-                                          overlayContext.drawImage(imgS,(-(event.width/2))*1.5*xyf[0] >> 0, (-(event.height/2))*1.5*xyf[1] >> 0, event.width*1.5*xyf[2], event.height*1.5*xyf[3]);
+                                          overlayContext.drawImage(imgS,(-(event.width/2))*1.5*xyf[0]*xyf[2] >> 0, (-(event.height/2))*1.5*xyf[1]*xyf[3] >> 0, event.width*1.5*xyf[2], event.height*1.5*xyf[3]);
                                         }
 					overlayContext.rotate((Math.PI/2)-event.angle);
                                         overlayContext.translate(-event.x, -event.y);
