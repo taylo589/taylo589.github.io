@@ -139,7 +139,7 @@
                                         overlayContext.strokeRect((-(event.width/2)) >> 0, (-(event.height/2)) >> 0, event.width, event.height);
                                         if( imgS != ""){
                                           xyfact = imgDict[imgS.id];
-                                          overlayContext.drawImage(imgS,(-(event.width/2))*1.5*xyfact[0] >> 0, (-(event.height/2))*1.5*xyfact[1] >> 0, event.width*1.5*xyfact[0], event.height*1.5*xyfact[1]);
+                                          overlayContext.drawImage(imgS,(-(event.width/2))*1.5 >> 0, (-(event.height/2))*1.5 >> 0, event.width*1.5, event.height*1.5);
                                         }
 					overlayContext.rotate((Math.PI/2)-event.angle);
                                         overlayContext.translate(-event.x, -event.y);
