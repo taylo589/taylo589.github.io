@@ -132,7 +132,7 @@
                                         overlayContext.strokeRect((-(event.width/2)) >> 0, (-(event.height/2)) >> 0, event.width, event.height);
                                         if( imgS != ""){
                                           xyf = imgDict[imgS.id];
-                                          document.getElementById("xyfactors").innerHTML = xyf[0].toString();
+                                          document.getElementById("xyfactors").innerHTML = xyf.toString();
                                           overlayContext.drawImage(imgS,(-(event.width/2))*1.5 >> 0, (-(event.height/2))*1.5 >> 0, event.width*1.5, event.height*1.5);
                                         }
 					overlayContext.rotate((Math.PI/2)-event.angle);
